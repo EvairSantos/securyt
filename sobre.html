@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+		a {
+            text-decoration: none;
+			/* Remove o sublinhado */
+        }
+
+        .experiencia {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+			/* Centraliza horizontalmente */
+            text-align: center;
+			/* Centraliza o texto horizontalmente */
+        }
+
+        .intro-box {
+            background-color: #f0f0f0;
+            padding: 30px;
+            margin: 30px;
+			/* Espaçamento externo */
+            max-width: auto;
+			/* Define a largura máxima */
+        }
+
+        .experiencia-row {
+            display: flex;
+            justify-content: space-between;
+			/* Espaço igual entre os blocos */
+            max-width: auto;
+			/* Define a largura máxima para os blocos */
+            width: 100%;
+			/* Garante que a largura seja 100% da seção */
+            margin-top: 20px;
+			/* Espaço superior para separar dos títulos */
+        }
+
+        .experiencia-col {
+            flex: 1;
+			/* Cresce igualmente para ocupar o espaço disponível */
+            padding: 20px;
+			/* Espaçamento interno para os blocos */
+            background-color: #f9f9f9;
+			/* Fundo dos blocos */
+        }
+
+        h2 {
+            color: #1c97df;
+            font-size: 20px;
+        }
+
+   p {
+            font-size: 16px;
+            line-height: 1.5;
+            text-align: justify; 
+			/* Texto justificado */
+        }
+    </style>
+</head>
+<body>
+    <section class="experiencia" id="sobre">
+        <!-- Texto introdutório dentro do retângulo afastado -->
+        <div class="intro-box">
+            <p><h1 style="text-align: left;">Olá, sou <a href="https://github.com/EvairSantos" <span style="color:#1c97df;">Evair!</span><a/></h1></p>
+			
+			<p><h1>Estudante do 5º semestre de Tecnologia da Informação na Unama Santarém, apaixonado por tecnologia e focado 
+			em oferecer soluções de alto desempenho para pequenas empresas. Minha missão é simplificar a complexidade da tecnologia,
+			garantindo que nossos clientes alcancem o sucesso em um mundo digital em constante evolução.
+			</h1></p>
+        </div>
+
+        <div class="container">
+            <h1 class="experiencia-h2" data-aos="fade-up"><span style="color:#1c97df;">Nosso</span> Diferencial</h1>
+            <div class="experiencia-row">
+                <!-- Blocos de informações -->
+                <div class="experiencia-col" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                    <div class="icon">
+                        <!-- Ícone para o primeiro bloco -->
+                    </div>
+                    <div class="bloco">
+                        <h3>Eficiência</h3>
+                        <p>Mantenha o foco nos negócios enquanto nós resolvemos os problemas de TI da sua empresa com rapidez e eficiência.</p>
+                    </div>
+                </div>
+                <div class="experiencia-col" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
+                    <div class="icon">
+                        <!-- Ícone para o segundo bloco -->
+                    </div>
+                    <div class="bloco">
+                        <h3>Rapidez</h3>
+                        <p>Definimos junto ao cliente o SLA para definirmos as prioridades de cada demanda, e assim, entregar uma prestação de serviço com qualidade.</p>
+                    </div>
+                </div>
+                <div class="experiencia-col" data-aos="fade-up" data-aos-delay="700" data-aos-duration="1000">
+                    <div class="icon">
+                        <!-- Ícone para o terceiro bloco -->
+                    </div>
+                    <div class="bloco">
+                        <h3>Multicanal</h3>
+                        <p>Você também escolhe por qual canal de comunicação quer realizar seu chamado: Telefone, Site, E-mail ou WhatsApp.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Adicione aqui seus scripts JavaScript, se necessário -->
+
+</body>
+</html>

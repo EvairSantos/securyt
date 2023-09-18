@@ -1,0 +1,59 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>MENU</title>
+    <base target="textos">
+    
+    <style type="text/css">
+        body{
+            background-color: #FFFFFF;
+        }
+        body, td, th {
+            font-family:"Lucida Grande", "Lucida Sans Unicode", Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+            font-style: normal;
+            color:#003366;
+        }
+    </style>
+</head>
+<body>
+    <table width="600" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+            <td height="10" style="text-align: white" class="titulo">
+                <p>VOCÊ ESTÁ ON-LINE</p>
+            </td>
+            <td
+            <td colspan="2" class="header">
+                <div class="data" id="data-hora"></div>
+                <script>
+                    function atualizarDataHora(){
+                        var dataHoraAtual= new Date();
+                        var elementoDataHora = document.getElementById("data-hora");            
+                        elementoDataHora.innerHTML = "DATA: " + dataHoraAtual.toLocaleDateString();
+                    }
+                    <!--Chama a função de atualização a cada segundo (1000 milissegundos) -->
+                    setInterval(atualizarDataHora, 1000);
+
+                    <!--Chama a função uma vez para exibir a data e hora imediatamente -->
+                    atualizarDataHora();
+                </script>
+            </td>
+			</td>
+
+        </tr>
+        <tr>
+            <td height="10" style="text-align: white">
+                <p></p>
+            </td>
+        </tr>
+        <tr>
+           <td height="10" style="text-align: center"><a href="logo.html" target="textos">INICIO</a></td>
+                <td width="120" height="10" style="text-align: center"><a href="fotos.html" target="textos">FOTOS</a></td>
+                <td width="120" height="10" style="text-align: center"><a href="sobre.html" target="textos">SOBRE</a></td>
+                <td width="120" height="10" style="text-align: center"><a href="http://seusite.com/login" target="textos">LOGIN</a></td>
+                <td width="120" height="10" style="text-align: center"><a href="http://seusite.com/ajuda" target="textos">AJUDA</a></td>
+            </tr>
+            <td width="128"></td>
+        </tr>
+    </table>
+</body>
+</html>
