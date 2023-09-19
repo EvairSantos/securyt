@@ -1,0 +1,135 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário de Contato</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .left-content {
+            width: 80%;
+            padding: 20px;
+        }
+        .right-content {
+            width: 40%;
+            padding: 20px;
+        }
+        .regra {
+            border: 1px solid #000;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        .regra input {
+            border: none;
+            outline: none;
+            padding: 2px;
+        }
+        .box {
+            border: 1px solid #000;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        .box input {
+            border: none;
+            outline: none;
+            padding: 2px;
+            width: 100%;
+        }
+        .box textarea {
+            border: none;
+            outline: none;
+            padding: 2px;
+            width: 100%;
+        }
+        .checkbox {
+            margin-left: 10px;
+        }
+        .button-container {
+            text-align: center;
+        }
+        .button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+		form {
+		background-color: #fff;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+		padding: 15px; 
+		margin-top: 40px;
+		}
+        .phone-image-container {
+            text-align: center;
+            padding: 10px; 
+        }
+        .phone-image {
+            width: 100%;
+            max-height: 250px; 
+            display: block;
+            margin: 0 auto; 
+            border-radius: 10px;
+			}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-content">
+            <h3>Fale conosco</h3>
+            <p>Tem alguma dúvida, crítica ou sugestão? Entre em contato. Vamos adorar te ouvir e receber sua mensagem, é só preencher o formulário.</p>
+            <div class="phone-image-container">
+                <img class="phone-image" src="imagens/faleconosco.png" alt="Imagem acima do número de telefone">
+            </div>
+            <p>Horário de atendimento: de segunda à sexta-feira das 07h às 17h e sábado e feriados: 8h às 12h.</p>
+        </div>
+        <div class="right-content">
+            <!-- Formulário -->
+            <form action="http://191.252.214.104/receber-dados" method="post">
+			
+                <div class="box">
+                    <input type="text" id="nome" name="nome" required placeholder="Digite seu nome">
+                </div>
+                <div class="box">
+                    <input type="email" id="email" name="email" required placeholder="Digite seu email">
+                </div>
+                <div class="box">
+                    <input id="whatsapp" name="whatsapp" required placeholder="Digite seu número de WhatsApp">
+                </div>
+                <div class="box">
+                    <textarea id="motivo" name="motivo_contato" required placeholder="Digite o motivo do seu contato"></textarea>
+                </div>
+                <div class="regra">
+                    <input type="checkbox" id="concordo" name="concordo" class="checkbox" required>
+                    <label for="concordo">Concordo em fornecer meus dados para receber contato por e-mail ou outros meios.</label>
+                </div>
+                <div class="button-container">
+                    <input type="submit" value="ENVIAR AGORA MESMO" id="enviar" class="button" disabled>
+                </div>
+            </form>
+            <!-- Fim do Formulário -->
+        </div>
+    </div>
+    <script>
+        document.getElementById("concordo").addEventListener("change", function() {
+            var enviarButton = document.getElementById("enviar");
+            enviarButton.disabled = !this.checked;
+        });
+        document.getElementById("whatsapp").addEventListener("input", function() {
+            var regex = /[^0-9]/g;
+            this.value = this.value.replace(regex, "");
+        });
+    </script>
+</body>
+</html>
