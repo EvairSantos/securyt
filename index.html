@@ -1,18 +1,161 @@
-<html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-<title>UNAMA</title>
-	<link rel="shortcut icon" href="imagens/icone.png">
-	<link rel="icon" type="image/gif" href="imagens/icone.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Download de Aplicativos</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 200px; /* Altura inicial do banner */
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            background-image: url('https://i.ibb.co/4fYNq4c/DTgmkdofa4.jpg'); /* URL da imagem do banner */
+            background-size: cover; /* Ajusta a imagem para cobrir todo o elemento */
+            background-position: center; /* Centraliza a imagem no elemento */
+            background-repeat: no-repeat; /* Evita que a imagem se repita */
+        }
+        .logo {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .app {
+            margin-bottom: 40px;
+            text-align: left; /* Alinhar o texto à esquerda */
+            display: inline-block;
+            width: 100%;
+        }
+        .app img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            margin-bottom: 10px; /* Espaço entre a imagem e o botão de download */
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            float: left; /* Fazer a imagem flutuar à esquerda */
+        }
+        .app img:hover {
+            transform: scale(1.1);
+        }
+        .app a {
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 0; /* Ajuste do padding para que o botão ocupe a largura da imagem */
+            border-radius: 25px;
+            transition: background-color 0.3s ease-in-out;
+            overflow: hidden;
+            position: relative;
+            display: block; /* Tornar o link de download em um bloco */
+            clear: both; /* Limpar a flutuação */
+            width: 90px; /* Largura igual à da imagem */
+            box-sizing: border-box; /* Incluir padding e bordas na largura total */
+            text-align: center; /* Centralizar o texto */
+        }
+        .app a:hover {
+            background-color: #0056b3;
+        }
+        .app a span {
+            position: relative;
+            z-index: 1;
+        }
+        .app a::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0);
+            transition: background-color 0.3s ease-in-out;
+            z-index: 0;
+        }
+        .app a:hover::after {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+    </style>
 </head>
-<frame src="inicio.html" name="textos" target="_self">
-<frameset rows="17%,*" cols="100%" frameborder="yes">
-<frame src="menu.html" name="topo" scrolling="no" noresize="noresize" target="textos">
-<frame src="logo.html" name="textos" target="_self">
-<frame src="fotos.html" name="textos" target="_self">
-<frame src="sobre.html" name="textos" target="_self">
-<noframes>
-<p> SEU NAVEGADOR NÃO SUPORTA FRAMES </P>
-</frameset>
-<frameset>
-</frameset>
+<body>
+    <div class="container">
+        <div class="banner">
+            <a href="https://example.com"></a>
+            <div class="logo">
+                <img src="https://i.ibb.co/tJJCYg3/DTdo37oz7a.png" alt="Logo">
+            </div>
+        </div>
+        <div class="app">
+            <img src="https://i.ibb.co/tJJCYg3/DTdo37oz7a.png" alt="App 1">
+            <a href="#" onclick="handleDownload('15bcQ8HYOw6letXJeLCv3kcZsPaf2vQQ_')"><span>Baixar Apk</span></a>
+        </div>
+        <div class="app">
+            <img src="https://i.ibb.co/tJJCYg3/DTdo37oz7a.png" alt="App 2">
+            <a href="#" onclick="handleDownload('15V8Vw8zmdH1MHggAA80mMZogn6IevY94')"><span>Baixar Apk</span></a>
+        </div>
+        <div class="app">
+            <img src="https://i.ibb.co/tJJCYg3/DTdo37oz7a.png" alt="App 3">
+            <a href="#" onclick="handleDownload('link_para_download_app3')"><span>Baixar Apk</span></a>
+        </div>
+    </div>
+
+    <script>
+function openGoogleDriveApp() {
+    // URI específica que é comumente tratada pelo aplicativo Google Drive
+    var googleDriveUri = 'googledrive://';
+
+    // Cria um link com a URI específica
+    var link = document.createElement('a');
+    link.setAttribute('href', googleDriveUri);
+
+    // Dispara um evento de clique no link criado
+    var clickevent = document.createEvent('Event');
+    clickevent.initEvent('click', true, false);
+    link.dispatchEvent(clickevent);
+}
+
+function redirectToPlayStore() {
+    // Redireciona para a página do Google Drive na Play Store
+    window.location.href = 'market://details?id=com.google.android.apps.docs';
+}
+
+function handleDownload(fileId) {
+    // Verifica se o aplicativo Google Drive está instalado e abre o link diretamente nele
+    openGoogleDriveApp();
+    
+    // Aguarda um curto período de tempo para verificar se o aplicativo Google Drive foi aberto
+    setTimeout(function() {
+        // Se o aplicativo Google Drive não foi aberto, redireciona para a Play Store
+        redirectToPlayStore();
+    }, 2000); // Redireciona para a Play Store após 2 segundos
+}
+
+    </script>
+</body>
 </html>
