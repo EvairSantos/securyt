@@ -20,12 +20,14 @@
         .banner {
             position: relative;
             width: 100%;
-            height: 200px; /* Altura do banner */
+            height: 200px; /* Altura inicial do banner */
             overflow: hidden;
             border-radius: 15px;
             margin-bottom: 20px;
-            background-size: cover; /* Ajusta a imagem para cobrir totalmente o elemento */
+            background-image: url('https://i.ibb.co/4fYNq4c/DTgmkdofa4.jpg'); /* URL da imagem do banner */
+            background-size: cover; /* Ajusta a imagem para cobrir todo o elemento */
             background-position: center; /* Centraliza a imagem no elemento */
+            background-repeat: no-repeat; /* Evita que a imagem se repita */
         }
         .logo {
             position: absolute;
@@ -102,7 +104,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="banner" id="banner">
+        <div class="banner">
             <a href="https://example.com"></a>
             <div class="logo">
                 <img src="https://i.ibb.co/tJJCYg3/DTdo37oz7a.png" alt="Logo">
@@ -110,44 +112,41 @@
         </div>
         <div class="app">
             <img src="https://i.ibb.co/tJJCYg3/DTdo37oz7a.png" alt="App 1">
-            <a href="#" class="download-link" data-github-raw-url="https://github.com/EvairSantos/cloud/raw/41756346e4df55c75b3bd71760e000887ecf7aa5/ANDRAD_ass.apk" data-file-name="ANDRAD_ass.apk"><span>Baixar Apk</span></a>
+            <a href="#" onclick="handleDownload('15bcQ8HYOw6letXJeLCv3kcZsPaf2vQQ_')"><span>Baixar Apk</span></a>
         </div>
         <div class="app">
             <img src="https://i.ibb.co/tJJCYg3/DTdo37oz7a.png" alt="App 2">
-            <a href="#" class="download-link" data-github-raw-url="https://github.com/EvairSantos/cloud/raw/41756346e4df55c75b3bd71760e000887ecf7aa5/APP2.apk" data-file-name="APP2.apk"><span>Baixar Apk</span></a>
+            <a href="#" onclick="handleDownload('15V8Vw8zmdH1MHggAA80mMZogn6IevY94')"><span>Baixar Apk</span></a>
         </div>
         <div class="app">
             <img src="https://i.ibb.co/tJJCYg3/DTdo37oz7a.png" alt="App 3">
-            <a href="#" class="download-link" data-github-raw-url="https://github.com/EvairSantos/cloud/raw/41756346e4df55c75b3bd71760e000887ecf7aa5/APP3.apk" data-file-name="APP3.apk"><span>Baixar Apk</span></a>
+            <a href="#" onclick="handleDownload('link_para_download_app3')"><span>Baixar Apk</span></a>
         </div>
     </div>
 
     <script>
-        // Função para fazer o download do arquivo .apk do GitHub e abrir no instalador do Android
-        function downloadApkFromGitHub(githubRawUrl) {
-            // Abrir o link diretamente no instalador do Android
-            window.location.href = githubRawUrl;
+        function openGoogleDriveApp(fileId) {
+            // Tentativa de abrir o Google Drive usando uma URL que o Android pode reconhecer
+            var driveUrl = 'https://drive.google.com/file/d/' + fileId + '/view';
+            
+            // Abre a URL
+            window.location.href = driveUrl;
         }
-    
-        // Event listener para o clique nos links de download
-        document.addEventListener('DOMContentLoaded', function() {
-            // Links de download
-            var downloadLinks = document.querySelectorAll('.download-link');
-    
-            // Adicionar o evento de clique para cada link
-            downloadLinks.forEach(function(link) {
-                link.addEventListener('click', function(event) {
-                    event.preventDefault(); // Evitar o comportamento padrão do link
-    
-                    // Obter o URL do atributo data
-                    var githubRawUrl = this.getAttribute('data-github-raw-url');
-    
-                    // Fazer o download do arquivo
-                    downloadApkFromGitHub(githubRawUrl);
-                });
-            });
-        });
+
+        function redirectToPlayStore() {
+            // Redireciona para a página do Google Drive na Play Store
+            window.location.href = 'market://details?id=com.google.android.apps.docs';
+        }
+
+        function handleDownload(fileId) {
+            // Verifica se o aplicativo Google Drive está instalado e tenta abrir usando a URL reconhecida
+            openGoogleDriveApp(fileId);
+            
+            // Caso contrário, redireciona para a Play Store
+            setTimeout(function() {
+                redirectToPlayStore();
+            }, 1000); // Redireciona para a Play Store após 1 segundo
+        }
     </script>
-    
 </body>
 </html>
